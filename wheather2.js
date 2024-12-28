@@ -35,7 +35,7 @@ async function cheakweather(city) {
         winddata.innerHTML = data.wind.speed + "Km/h";
         clouddata.innerHTML = data.clouds.all + "%";
 
-      
+
         //weather icon
 
         if (data.weather[0].main == "Clouds") {
@@ -46,15 +46,15 @@ async function cheakweather(city) {
         }
         else if (data.weather[0].main == "Haze") {
             icon.src = "haze.png";
-           
+
         }
         else if (data.weather[0].main == "Clear") {
             icon.src = "clear.png";
-            
+
         }
         else if (data.weather[0].main == "Mist") {
             icon.src = "mist.png";
-           
+
         }
 
         //country flag
@@ -92,20 +92,33 @@ async function cheakweather(city) {
         else if (data.sys.country == "CN") {
             countryicon.src = "china.png";
         }
-        else if(data.sys.country == "JP"){
+        else if (data.sys.country == "JP") {
             countryicon.src = "japan.png"
-        }  
+        }
+        else if (data.sys.country == "FR" || data.sys.country == "CI") {
+            countryicon.src = "france.png"
+        }
 
     } catch (err) {
-        console.log( err);
-        
+        console.log(err);
+
         hide2.classList.remove("hide2");
         visible.classList.add("visible");
         hide.classList.add("hide");
-        
+
         bg.classList.remove("bg");
         hide3.classList.remove("hide3");
     }
+}
+function voice() {
+    var recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-GB"
+    recognition.onresult = function (event) {
+        console.log(event);
+        document.getElementById("search").value = event.results[0][0].transcript;
+    }
+    recognition.start();
+
 }
 
 btn.addEventListener("click", () => {
