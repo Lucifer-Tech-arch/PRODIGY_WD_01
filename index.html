@@ -3,17 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="icon1.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Pedia</title>
+    <title>WeatherWizard.com</title>
     <link rel="stylesheet" href="wheather2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="body bg">
     <div class="container">
-        <div class="head">
-            <h1>WEATHER APP</h1>
-        </div>
+        <section class="head">
+            <div class="headimg">
+                <img class="logo" src="icon1.png">
+            </div>
+            <div class="headtext">
+                <h1>WeatherWizard</h1>
+            </div>
+        </section>
         <nav>
 
             <div class="right">
@@ -21,13 +29,15 @@
                     <img src="search.png" alt="">
                 </button>
                 <input type="text" id="search" placeholder="Enter City Name...">
-               
+                <button onclick="voice()" class="box" id="voice">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
             </div>
         </nav>
-        
-        
+
+
         <img src="error.png" class="error hide2" height="200px" width="200px">
-            <h2 class="msg hide3">PLEASE ENTER THE VALID CITY NAME!</h2>
+        <h2 class="msg hide3">PLEASE ENTER THE VALID CITY NAME!</h2>
         <div class="weather visible">
             <div class="icon">
                 <img src="mist.png" class="weathericon" height="165px" width="165px">
@@ -35,9 +45,9 @@
             </div>
 
             <div class="tempcity">
-                <h1 class="temp">25°C</h1>
+                <h1 class="temp"></h1>
                 <div class="country">
-                    <h2 class="city">Mathura</h2>
+                    <h2 class="city"></h2>
                     <img src="" class="countryicon" height="33px" width="36px">
                 </div>
             </div>
@@ -67,6 +77,9 @@
         </div>
     </div>
     <script src="wheather2.js"></script>
+    <div class="contact">
+        <a href="#"><i class="fa-solid fa-comment"></i></a>
+    </div>
 </body>
 
 </html>
